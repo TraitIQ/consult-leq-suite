@@ -1,185 +1,201 @@
 "use client";
-import Image from "next/image";
+import React from "react";
 
 export default function Home() {
   return (
-    <main style={{
-      fontFamily: "sans-serif",
-      backgroundColor: "#0f172a",
-      color: "white",
-      minHeight: "100vh",
-      overflowX: "hidden",
-    }}>
-      
-      {/* HERO SECTION */}
-      <section style={{
-        display: "grid",
-        placeItems: "center",
-        textAlign: "center",
-        minHeight: "100vh",
-        background: "linear-gradient(180deg, #1F2937 0%, #0f172a 100%)",
-      }}>
-        <div style={{maxWidth: "700px", padding: "1rem"}}>
-          <h1 style={{fontSize: "2.8rem", fontWeight: 700, color: "#FACC15", marginBottom: "1rem"}}>
-            Behavioural Intelligence for Leadership and Culture
-          </h1>
-          <p style={{fontSize: "1.2rem", color: "#E5E7EB", marginBottom: "2rem"}}>
-            Every organisation has its own Leadership Equation™ — discover yours.
-          </p>
-          <div style={{display: "flex", justifyContent: "center", gap: "1rem"}}>
-            <button style={{
-              backgroundColor: "#00BFA6",
-              border: "none",
-              padding: "0.9rem 1.5rem",
-              fontWeight: 600,
-              borderRadius: "10px",
-              cursor: "pointer",
-              color: "#0f172a"
-            }}>
-              Take the Free Test
-            </button>
-            <button style={{
-              backgroundColor: "transparent",
-              border: "2px solid #FACC15",
-              padding: "0.9rem 1.5rem",
-              fontWeight: 600,
-              borderRadius: "10px",
-              color: "#FACC15",
-              cursor: "pointer"
-            }}>
-              Contact Us
-            </button>
+    <main>
+      {/* HERO */}
+      <section id="hero" className="section hero">
+        <div className="container">
+          <div className="panel center">
+            <h1 className="h1">Behavioural intelligence that moves results</h1>
+            <p className="lead">
+              We diagnose behaviour, reduce friction, and help teams deliver.
+            </p>
+            <div className="btnrow">
+              <a className="btn" href="#free-test">Get a quick snapshot</a>
+              <a className="btnghost" href="#contact">Talk to us</a>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* INSIGHT FOCUS */}
-      <section style={{padding: "4rem 2rem", backgroundColor: "#111827"}}>
-        <h2 style={{textAlign: "center", fontSize: "2rem", color: "#FACC15", marginBottom: "1.5rem"}}>
-          Insight Focus Areas
-        </h2>
-        <p style={{textAlign: "center", maxWidth: "800px", margin: "0 auto", color: "#E5E7EB"}}>
-          Every insight we capture — from leadership behaviour to cultural engagement — feeds into a single view of performance: your organisation’s Leadership Equation™.
-        </p>
-      </section>
-
-      {/* DISCOVER EQUATION */}
-      <section style={{padding: "4rem 2rem", backgroundColor: "#0f172a"}}>
-        <h2 style={{textAlign: "center", fontSize: "2rem", color: "#00BFA6", marginBottom: "1rem"}}>
-          Discover Your Organisation’s Leadership Equation™
-        </h2>
-        <p style={{textAlign: "center", maxWidth: "700px", margin: "0 auto", color: "#E5E7EB"}}>
-          Every organisation operates through its own Leadership Equation — the balance of Clarity, Behaviour, and Culture that drives success.
-        </p>
-        <div style={{textAlign: "center", marginTop: "2rem", fontSize: "1.3rem", color: "#FACC15"}}>
-          Clarity × Behaviour + Culture² = Performance Potential
-        </div>
-        <p style={{textAlign: "center", marginTop: "1.5rem", color: "#E5E7EB"}}>
-          The LEQ Index™ shows how balanced your leadership ecosystem is.  
-          High clarity, consistent behaviour, and a strong culture combine to multiply performance.  
-          Different sectors have different equations — the goal is balance, not uniformity.
-        </p>
-      </section>
-
-      {/* EVIDENCE SECTION */}
-      <section style={{padding: "4rem 2rem", backgroundColor: "#111827"}}>
-        <h2 style={{textAlign: "center", fontSize: "2rem", color: "#FACC15", marginBottom: "2rem"}}>
-          The Numbers Behind Behavioural Intelligence
-        </h2>
-        <div style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-          gap: "2rem",
-          textAlign: "center",
-          maxWidth: "900px",
-          margin: "0 auto"
-        }}>
-          <div style={{backgroundColor: "#1F2937", borderRadius: "12px", padding: "1.5rem", border: "1px solid #FACC15"}}>
-            <h3 style={{fontSize: "2rem", color: "#FACC15"}}>77%</h3>
-            <p>of organisations face leadership skills gaps.</p>
-          </div>
-          <div style={{backgroundColor: "#1F2937", borderRadius: "12px", padding: "1.5rem", border: "1px solid #00BFA6"}}>
-            <h3 style={{fontSize: "2rem", color: "#00BFA6"}}>21%</h3>
-            <p>of employees are fully engaged globally.</p>
-          </div>
-          <div style={{backgroundColor: "#1F2937", borderRadius: "12px", padding: "1.5rem", border: "1px solid #FACC15"}}>
-            <h3 style={{fontSize: "2rem", color: "#FACC15"}}>50%+</h3>
-            <p>report burnout or psychological fatigue.</p>
+      {/* WHAT WE DO */}
+      <section id="what" className="section">
+        <div className="container">
+          <div className="grid two">
+            <div className="panel">
+              <h2 className="h2">What we do</h2>
+              <ul className="list">
+                <li>Surface where behaviour helps or harms performance.</li>
+                <li>Map values to everyday decisions and ways of working.</li>
+                <li>Make safety, trust, and inclusion visible and measurable.</li>
+                <li>Focus people on the few behaviours that change outcomes.</li>
+                <li>Track progress and verify impact with real evidence.</li>
+              </ul>
+            </div>
+            <div className="panel">
+              <h3 className="h3">Outcomes you can expect</h3>
+              <ul className="list">
+                <li>Faster decisions and clearer priorities.</li>
+                <li>Lower burnout risk and better load balance.</li>
+                <li>Higher psychological safety and trust.</li>
+                <li>Better role fit and stronger retention.</li>
+                <li>Leaders who leave a visible legacy of impact.</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* WHY CHOOSE */}
-      <section style={{padding: "4rem 2rem", backgroundColor: "#0f172a"}}>
-        <h2 style={{textAlign: "center", fontSize: "2rem", color: "#00BFA6", marginBottom: "2rem"}}>
-          Behavioural Intelligence That Works in the Real World
-        </h2>
-        <ul style={{maxWidth: "700px", margin: "0 auto", lineHeight: "2rem", color: "#E5E7EB"}}>
-          <li>Behaviour-first, not skills-first.</li>
-          <li>Culture and leadership integrated into one system.</li>
-          <li>Grounded in science, refined through practice.</li>
-          <li>Designed for measurable, lasting change.</li>
-          <li>One ecosystem for growth — not a one-off programme.</li>
-        </ul>
-      </section>
-
-      {/* CONTACT SECTION */}
-      <section style={{padding: "4rem 2rem", backgroundColor: "#111827"}}>
-        <h2 style={{textAlign: "center", fontSize: "2rem", color: "#FACC15"}}>Get in Touch</h2>
-        <p style={{textAlign: "center", color: "#E5E7EB", marginBottom: "1rem"}}>
-          If leadership is a lever, which lever do you need to pull first?
-        </p>
-        <p style={{textAlign: "center", color: "#FACC15", fontWeight: 600, marginBottom: "2rem"}}>
-          Let’s put your Leadership Equation™ into motion.
-        </p>
-        
-        <form
-          className="contactForm"
-          action="https://formspree.io/f/mgvndawg"
-          method="POST"
-          style={{
-            maxWidth: "600px",
-            margin: "0 auto",
-            display: "flex",
-            flexDirection: "column",
-            gap: "1rem"
-          }}
-        >
-          <input type="hidden" name="_subject" value="Consult LEQ — New enquiry" />
-          <input type="hidden" name="_next" value="/thank-you" />
-          <input type="text" name="_gotcha" style={{display:"none"}} tabIndex={-1} autoComplete="off" />
-
-          <input type="text" name="name" placeholder="Your Name" required style={{padding:"0.8rem", borderRadius:"8px", border:"none"}} />
-          <input type="email" name="email" placeholder="Your Email" required style={{padding:"0.8rem", borderRadius:"8px", border:"none"}} />
-          <textarea name="message" placeholder="Your Message" required style={{padding:"0.8rem", borderRadius:"8px", border:"none"}} />
-          <button type="submit" style={{
-            backgroundColor: "#00BFA6",
-            border: "none",
-            padding: "0.9rem",
-            fontWeight: 600,
-            borderRadius: "8px",
-            cursor: "pointer",
-            color: "#0f172a"
-          }}>
-            Send Message
-          </button>
-        </form>
-      </section>
-
-      {/* FINAL CTA */}
-      <section style={{padding:"2rem", backgroundColor:"#0f172a", textAlign:"center"}}>
-        <p style={{fontSize:"1.2rem", color:"#FACC15", marginBottom:"1rem"}}>
-          Discover your organisation’s Leadership Equation™ and turn data into impact.
-        </p>
-        <div style={{display:"flex", justifyContent:"center", gap:"1rem"}}>
-          <button style={{backgroundColor:"#00BFA6", color:"#0f172a", border:"none", padding:"0.8rem 1.4rem", borderRadius:"8px", fontWeight:600, cursor:"pointer"}}>
-            Book a Consult
-          </button>
-          <button style={{backgroundColor:"transparent", color:"#FACC15", border:"2px solid #FACC15", padding:"0.8rem 1.4rem", borderRadius:"8px", fontWeight:600, cursor:"pointer"}}>
-            Free Leadership Test
-          </button>
+      {/* HOW IT WORKS */}
+      <section id="how" className="section alt">
+        <div className="container">
+          <div className="grid three steps">
+            <div className="step">
+              <span className="badge">1</span>
+              <h4 className="h4">Assess</h4>
+              <p>We collect signals on behaviour, safety, load, and fit.</p>
+            </div>
+            <div className="step">
+              <span className="badge">2</span>
+              <h4 className="h4">Align</h4>
+              <p>We link behaviours to strategy and set clear priorities.</p>
+            </div>
+            <div className="step">
+              <span className="badge">3</span>
+              <h4 className="h4">Activate</h4>
+              <p>We run focused practice and verify gains over time.</p>
+            </div>
+          </div>
         </div>
       </section>
+
+      {/* CAPABILITY AREAS */}
+      <section id="capability" className="section">
+        <div className="container">
+          <div className="grid two">
+            <div className="card">
+              <h3 className="h3">Culture and safety</h3>
+              <p>Make safety, fairness, and inclusion part of daily work.</p>
+            </div>
+            <div className="card">
+              <h3 className="h3">Leadership effectiveness</h3>
+              <p>Build consistent behaviours and hold the right standards.</p>
+            </div>
+            <div className="card">
+              <h3 className="h3">Workforce fit</h3>
+              <p>Match people to roles by behaviour and context.</p>
+            </div>
+            <div className="card">
+              <h3 className="h3">Delivery rhythm</h3>
+              <p>Create steady execution with clear checkpoints and load care.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* EVIDENCE */}
+      <section id="evidence" className="section alt">
+        <div className="container">
+          <div className="grid four stats">
+            <div className="stat">
+              <div className="num">90%</div>
+              <div className="cap">report clearer priorities</div>
+            </div>
+            <div className="stat">
+              <div className="num">3x</div>
+              <div className="cap">faster insight to action</div>
+            </div>
+            <div className="stat">
+              <div className="num">40+</div>
+              <div className="cap">behaviour signals tracked</div>
+            </div>
+            <div className="stat">
+              <div className="num">12k+</div>
+              <div className="cap">data points analysed</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CASE VOICES */}
+      <section id="voices" className="section">
+        <div className="container">
+          <div className="grid three">
+            <div className="quote">
+              <p>We cut noise, set three behaviours, and delivery moved.</p>
+              <span className="by">Executive head</span>
+            </div>
+            <div className="quote">
+              <p>Safety improved and staff spoke up earlier about risks.</p>
+              <span className="by">Operations lead</span>
+            </div>
+            <div className="quote">
+              <p>Clear role fit decisions reduced churn in one term.</p>
+              <span className="by">People lead</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FREE SNAPSHOT CTA */}
+      <section id="free-test" className="section cta">
+        <div className="container">
+          <div className="panel center">
+            <h2 className="h2">See your starting point</h2>
+            <p className="lead">A short check that shows top drivers and risks.</p>
+            <div className="btnrow">
+              <a className="btn" href="/test">Begin snapshot</a>
+              <a className="btnghost" href="#contact">Book a call</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CONTACT */}
+      <section id="contact" className="section alt">
+        <div className="container">
+          <div className="grid two">
+            <div className="panel">
+              <h3 className="h3">Contact</h3>
+              <p>Email: <a href="mailto:hello@consultleq.com">hello@consultleq.com</a></p>
+              <p>We will respond within one working day.</p>
+            </div>
+            <form className="form" action="/api/contact" method="post">
+              <div className="row">
+                <input name="name" placeholder="Your name" required />
+              </div>
+              <div className="row">
+                <input name="email" type="email" placeholder="Your email" required />
+              </div>
+              <div className="row">
+                <textarea name="message" rows={4} placeholder="Your message" required />
+              </div>
+              <div className="btnrow">
+                <button className="btn" type="submit">Send</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="section footer">
+        <div className="container">
+          <div className="row between">
+            <p>© {new Date().getFullYear()} CONSULT LEQ</p>
+            <nav className="footer-nav">
+              <a href="#what">What we do</a>
+              <a href="#capability">Capability</a>
+              <a href="#free-test">Snapshot</a>
+              <a href="#contact">Contact</a>
+            </nav>
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }
+
+      
