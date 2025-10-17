@@ -1,103 +1,185 @@
+"use client";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <main style={{
+      fontFamily: "sans-serif",
+      backgroundColor: "#0f172a",
+      color: "white",
+      minHeight: "100vh",
+      overflowX: "hidden",
+    }}>
+      
+      {/* HERO SECTION */}
+      <section style={{
+        display: "grid",
+        placeItems: "center",
+        textAlign: "center",
+        minHeight: "100vh",
+        background: "linear-gradient(180deg, #1F2937 0%, #0f172a 100%)",
+      }}>
+        <div style={{maxWidth: "700px", padding: "1rem"}}>
+          <h1 style={{fontSize: "2.8rem", fontWeight: 700, color: "#FACC15", marginBottom: "1rem"}}>
+            Behavioural Intelligence for Leadership and Culture
+          </h1>
+          <p style={{fontSize: "1.2rem", color: "#E5E7EB", marginBottom: "2rem"}}>
+            Every organisation has its own Leadership Equation™ — discover yours.
+          </p>
+          <div style={{display: "flex", justifyContent: "center", gap: "1rem"}}>
+            <button style={{
+              backgroundColor: "#00BFA6",
+              border: "none",
+              padding: "0.9rem 1.5rem",
+              fontWeight: 600,
+              borderRadius: "10px",
+              cursor: "pointer",
+              color: "#0f172a"
+            }}>
+              Take the Free Test
+            </button>
+            <button style={{
+              backgroundColor: "transparent",
+              border: "2px solid #FACC15",
+              padding: "0.9rem 1.5rem",
+              fontWeight: 600,
+              borderRadius: "10px",
+              color: "#FACC15",
+              cursor: "pointer"
+            }}>
+              Contact Us
+            </button>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+      </section>
+
+      {/* INSIGHT FOCUS */}
+      <section style={{padding: "4rem 2rem", backgroundColor: "#111827"}}>
+        <h2 style={{textAlign: "center", fontSize: "2rem", color: "#FACC15", marginBottom: "1.5rem"}}>
+          Insight Focus Areas
+        </h2>
+        <p style={{textAlign: "center", maxWidth: "800px", margin: "0 auto", color: "#E5E7EB"}}>
+          Every insight we capture — from leadership behaviour to cultural engagement — feeds into a single view of performance: your organisation’s Leadership Equation™.
+        </p>
+      </section>
+
+      {/* DISCOVER EQUATION */}
+      <section style={{padding: "4rem 2rem", backgroundColor: "#0f172a"}}>
+        <h2 style={{textAlign: "center", fontSize: "2rem", color: "#00BFA6", marginBottom: "1rem"}}>
+          Discover Your Organisation’s Leadership Equation™
+        </h2>
+        <p style={{textAlign: "center", maxWidth: "700px", margin: "0 auto", color: "#E5E7EB"}}>
+          Every organisation operates through its own Leadership Equation — the balance of Clarity, Behaviour, and Culture that drives success.
+        </p>
+        <div style={{textAlign: "center", marginTop: "2rem", fontSize: "1.3rem", color: "#FACC15"}}>
+          Clarity × Behaviour + Culture² = Performance Potential
+        </div>
+        <p style={{textAlign: "center", marginTop: "1.5rem", color: "#E5E7EB"}}>
+          The LEQ Index™ shows how balanced your leadership ecosystem is.  
+          High clarity, consistent behaviour, and a strong culture combine to multiply performance.  
+          Different sectors have different equations — the goal is balance, not uniformity.
+        </p>
+      </section>
+
+      {/* EVIDENCE SECTION */}
+      <section style={{padding: "4rem 2rem", backgroundColor: "#111827"}}>
+        <h2 style={{textAlign: "center", fontSize: "2rem", color: "#FACC15", marginBottom: "2rem"}}>
+          The Numbers Behind Behavioural Intelligence
+        </h2>
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+          gap: "2rem",
+          textAlign: "center",
+          maxWidth: "900px",
+          margin: "0 auto"
+        }}>
+          <div style={{backgroundColor: "#1F2937", borderRadius: "12px", padding: "1.5rem", border: "1px solid #FACC15"}}>
+            <h3 style={{fontSize: "2rem", color: "#FACC15"}}>77%</h3>
+            <p>of organisations face leadership skills gaps.</p>
+          </div>
+          <div style={{backgroundColor: "#1F2937", borderRadius: "12px", padding: "1.5rem", border: "1px solid #00BFA6"}}>
+            <h3 style={{fontSize: "2rem", color: "#00BFA6"}}>21%</h3>
+            <p>of employees are fully engaged globally.</p>
+          </div>
+          <div style={{backgroundColor: "#1F2937", borderRadius: "12px", padding: "1.5rem", border: "1px solid #FACC15"}}>
+            <h3 style={{fontSize: "2rem", color: "#FACC15"}}>50%+</h3>
+            <p>report burnout or psychological fatigue.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* WHY CHOOSE */}
+      <section style={{padding: "4rem 2rem", backgroundColor: "#0f172a"}}>
+        <h2 style={{textAlign: "center", fontSize: "2rem", color: "#00BFA6", marginBottom: "2rem"}}>
+          Behavioural Intelligence That Works in the Real World
+        </h2>
+        <ul style={{maxWidth: "700px", margin: "0 auto", lineHeight: "2rem", color: "#E5E7EB"}}>
+          <li>Behaviour-first, not skills-first.</li>
+          <li>Culture and leadership integrated into one system.</li>
+          <li>Grounded in science, refined through practice.</li>
+          <li>Designed for measurable, lasting change.</li>
+          <li>One ecosystem for growth — not a one-off programme.</li>
+        </ul>
+      </section>
+
+      {/* CONTACT SECTION */}
+      <section style={{padding: "4rem 2rem", backgroundColor: "#111827"}}>
+        <h2 style={{textAlign: "center", fontSize: "2rem", color: "#FACC15"}}>Get in Touch</h2>
+        <p style={{textAlign: "center", color: "#E5E7EB", marginBottom: "1rem"}}>
+          If leadership is a lever, which lever do you need to pull first?
+        </p>
+        <p style={{textAlign: "center", color: "#FACC15", fontWeight: 600, marginBottom: "2rem"}}>
+          Let’s put your Leadership Equation™ into motion.
+        </p>
+        
+        <form
+          className="contactForm"
+          action="https://formspree.io/f/mgvndawg"
+          method="POST"
+          style={{
+            maxWidth: "600px",
+            margin: "0 auto",
+            display: "flex",
+            flexDirection: "column",
+            gap: "1rem"
+          }}
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+          <input type="hidden" name="_subject" value="Consult LEQ — New enquiry" />
+          <input type="hidden" name="_next" value="/thank-you" />
+          <input type="text" name="_gotcha" style={{display:"none"}} tabIndex={-1} autoComplete="off" />
+
+          <input type="text" name="name" placeholder="Your Name" required style={{padding:"0.8rem", borderRadius:"8px", border:"none"}} />
+          <input type="email" name="email" placeholder="Your Email" required style={{padding:"0.8rem", borderRadius:"8px", border:"none"}} />
+          <textarea name="message" placeholder="Your Message" required style={{padding:"0.8rem", borderRadius:"8px", border:"none"}} />
+          <button type="submit" style={{
+            backgroundColor: "#00BFA6",
+            border: "none",
+            padding: "0.9rem",
+            fontWeight: 600,
+            borderRadius: "8px",
+            cursor: "pointer",
+            color: "#0f172a"
+          }}>
+            Send Message
+          </button>
+        </form>
+      </section>
+
+      {/* FINAL CTA */}
+      <section style={{padding:"2rem", backgroundColor:"#0f172a", textAlign:"center"}}>
+        <p style={{fontSize:"1.2rem", color:"#FACC15", marginBottom:"1rem"}}>
+          Discover your organisation’s Leadership Equation™ and turn data into impact.
+        </p>
+        <div style={{display:"flex", justifyContent:"center", gap:"1rem"}}>
+          <button style={{backgroundColor:"#00BFA6", color:"#0f172a", border:"none", padding:"0.8rem 1.4rem", borderRadius:"8px", fontWeight:600, cursor:"pointer"}}>
+            Book a Consult
+          </button>
+          <button style={{backgroundColor:"transparent", color:"#FACC15", border:"2px solid #FACC15", padding:"0.8rem 1.4rem", borderRadius:"8px", fontWeight:600, cursor:"pointer"}}>
+            Free Leadership Test
+          </button>
+        </div>
+      </section>
+    </main>
   );
 }
