@@ -1,97 +1,149 @@
-/* ===== TOKENS ===== */
-:root{
-  --charcoal:#1F2937;
-  --charcoal-2:#111827;
-  --teal:#00BFA6;
-  --gold:#FACC15;
-  --ink:#E5E7EB;
-  --white:#ffffff;
-  --wrap:1100px;
+/* ===== DESIGN TOKENS ===== */
+:root {
+  --charcoal: #0e1116;      /* page background */
+  --charcoal-2: #141922;    /* section alt */
+  --panel: #0f172a;         /* panel/card bg */
+  --teal: #007f8c;          /* LEQ teal */
+  --gold: #facc15;          /* LEQ gold */
+  --ink: #ffffff;           /* white text */
 }
 
-/* ===== BASE ===== */
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Inter,Roboto,Arial,sans-serif;
-  color:var(--ink);
-  background:var(--charcoal);
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
+/* ===== GLOBAL RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-a{text-decoration:none;color:inherit}
-.wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px}
+
+body {
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--charcoal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===== CONTAINER WRAPPER ===== */
+.wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
 
 /* ===== FIXED HEADER ===== */
-.header{
-  position:fixed; top:0; left:0; right:0; z-index:50;
-  background:rgba(17,24,39,.9); /* deep charcoal */
-  backdrop-filter:blur(8px);
-  border-bottom:1px solid rgba(255,255,255,.06);
-}
-.header .wrap{
-  display:flex; align-items:center; justify-content:space-between;
-  height:64px;
-}
-.headerAccent{
-  height:2px; background:linear-gradient(90deg,transparent,var(--teal),transparent);
-}
-.brand{display:flex; align-items:center; gap:10px}
-.brandLogo{width:28px; height:28px; display:block}
-.brandText{color:var(--white); font-weight:800; letter-spacing:.04em; font-size:.95rem}
-
-.nav{display:flex; gap:18px; align-items:center}
-.nav a{color:var(--white); opacity:.9; font-weight:600; padding:6px 8px; border-radius:8px}
-.nav a:hover{opacity:1; outline:1px solid rgba(255,255,255,.14)}
-.nav .cta{border:1px solid var(--teal); color:var(--white)}
-.nav .cta:hover{background:var(--teal); color:#062a27}
-
-/* offset page for fixed header */
-.section{padding:96px 0 72px}
-.section:first-of-type{padding-top:128px} /* hero clears header */
-.section.alt{background:var(--charcoal-2)}
-
-/* ===== HERO ===== */
-.hero{
-  position:relative; overflow:hidden; text-align:center; color:var(--white);
-  background:
-    radial-gradient(900px 520px at 20% 0%, rgba(0,191,166,.18), transparent 60%),
-    radial-gradient(900px 520px at 80% 20%, rgba(250,204,21,.12), transparent 55%),
-    linear-gradient(180deg, #0f172a 0%, #0b1220 100%);
-}
-.heroInner{position:relative; z-index:1}
-.h1{font-size:clamp(32px,4.5vw,48px); line-height:1.1; font-weight:800; color:var(--white); margin:0 0 12px}
-.lead{font-size:18px; color:rgba(255,255,255,.9); max-width:760px; margin:0 auto 18px}
-
-/* hero cube watermark with gentle sway */
-.hero::before{
-  content:""; position:absolute; top:38%; left:50%;
-  width:560px; height:560px; transform:translate(-50%,-50%) rotate(-8deg);
-  background:url("/cube.png") no-repeat center/contain;
-  opacity:.28; filter:grayscale(10%) brightness(1.05);
-  pointer-events:none;
-  animation:sway 14s ease-in-out infinite;
-}
-@keyframes sway{
-  0%{ transform:translate(-50%,-50%) rotate(-8deg) }
-  50%{ transform:translate(-50%,-50%) rotate(8deg) }
-  100%{ transform:translate(-50%,-50%) rotate(-8deg) }
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: rgba(17, 24, 39, 0.9); /* deep charcoal */
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-/* ===== BUTTONS ===== */
-.btnrow{display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:10px}
-.btn{
-  background:var(--teal); color:#082422; font-weight:800;
-  padding:12px 18px; border-radius:12px; border:1px solid rgba(255,255,255,.18);
-  box-shadow:0 10px 26px rgba(0,191,166,.25);
+.header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
 }
-.btn:hover{filter:brightness(1.06)}
-.btnghost{
-  background:transparent; color:var(--white);
-  border:1px solid rgba(255,255,255,.2); padding:12px 18px; border-radius:12px; font-weight:800;
-}
-.btnghost:hover{border-color:var(--white)}
 
-/* ===== UTIL ===== */
-.center{text-align:center}
+/* ===== HERO SECTION ===== */
+.hero {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #0e1116 0%, #141922 100%);
+  position: relative;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  color: var(--ink);
+  font-size: 1.1rem;
+}
+
+.hero .btnrow {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  background: var(--teal);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: #009ba8;
+}
+
+.btnghost {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  border: 2px solid var(--gold);
+  background: transparent;
+  color: var(--gold);
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btnghost:hover {
+  background: var(--gold);
+  color: #0e1116;
+}
+
+/* ===== SECTION DIVIDERS ===== */
+.section {
+  padding: 100px 20px;
+  background: var(--charcoal-2);
+  text-align: center;
+}
+
+.section:nth-of-type(even) {
+  background: var(--charcoal);
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  padding: 36px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  text-align: center;
+}
+
+.footer a {
+  color: var(--gold);
+  margin: 0 10px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .btnrow {
+    flex-direction: column;
+  }
+}
