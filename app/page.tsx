@@ -1,20 +1,6 @@
-/* ====== GLOBAL RESET ====== */
-/* ---------- DESIGN TOKENS ---------- */
-:root{
-  --charcoal:#0E1116;        /* page background */
-  --charcoal-2:#141922;      /* section alt */
-  --panel:#0F172A;           /* panel card bg */
-  --panel-2:#0B1220;         /* panel alt */
-  --border:#1F2A44;
-  --teal:#0EA5A6;
-  --teal-2:#0A7E80;
-  --yellow:#FACC15;
-  --ink:#E5E7EB;             /* body text */
-  --ink-dim:#B6C2D1;
-  --white:#FFFFFF;
-  --max:1100px;
-}
-
+export default function home() {
+  return (
+    <main>
 /* ---------- BASE ---------- */
 *{box-sizing:border-box}
 html,body{height:100%}
