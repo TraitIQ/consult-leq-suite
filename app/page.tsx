@@ -1,118 +1,152 @@
-export default function home() {
+
+export const metadata = {
+  title: "Consult LEQ – The Leadership Equation",
+  description: "Behavioural intelligence for leadership and culture.",
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <main>
-/* ---------- BASE ---------- */
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
-  color:var(--ink);
-  background:var(--charcoal);
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-}
-a{color:inherit;text-decoration:none}
-
-/* ---------- LAYOUT ---------- */
-.section{padding:72px 20px}
-.section.alt{background:var(--charcoal-2)}
-.container{max-width:var(--max);margin:0 auto}
-
-/* subtle section divider */
-.section{border-top:1px solid rgba(255,255,255,.06)}
-.section:first-of-type{border-top:0}
-
-/* ---------- HERO ---------- */
-.hero{
-  position:relative;
-  min-height:72vh;
-  display:grid;
-  place-items:center;
-  text-align:center;
-  color:var(--white);
-  background:
-    radial-gradient(1000px 600px at 50% -10%, rgba(14,165,166,.25), transparent 60%),
-    radial-gradient(800px 500px at 120% 20%, rgba(250,204,21,.15), transparent 55%),
-    radial-gradient(900px 520px at -20% 30%, rgba(14,165,166,.18), transparent 60%),
-    linear-gradient(180deg, #0E2937 0%, #0B172A 100%);
-  overflow:hidden;
-}
-/* cube watermark */
-.hero::after{
-  content:"";
-  position:absolute; inset:auto -140px -140px -140px; top:10%;
-  background:url("/cube.png") center/560px no-repeat;
-  opacity:.12; filter:grayscale(20%);
-  pointer-events:none;
-}
-
-/* ---------- TYPOGRAPHY ---------- */
-.h1{font-size:clamp(2rem,4vw,3rem);line-height:1.1;font-weight:800;color:var(--white);margin:0 0 12px}
-.h2{font-size:clamp(1.6rem,3vw,2rem);line-height:1.2;font-weight:700;color:var(--teal);margin:0 0 20px}
-.lead{color:var(--ink);opacity:.9;font-size:1.05rem;max-width:720px;margin:0 auto 24px}
-
-/* ---------- PANELS / CARDS ---------- */
-.panel{
-  background:linear-gradient(180deg,var(--panel),var(--panel-2));
-  border:1px solid var(--border);
-  border-radius:16px;
-  padding:24px;
-  box-shadow:0 10px 30px rgba(0,0,0,.25);
-}
-
-/* metric cards */
-.cards{
-  display:grid;gap:18px;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-}
-.card{
-  background:linear-gradient(180deg,#0c1a2e,#0a1424);
-  border:1px solid var(--border);
-  border-radius:14px;padding:22px;text-align:center;
-}
-.card strong{font-size:2rem;color:var(--white);display:block;margin-bottom:6px}
-.card span{color:var(--ink-dim);font-size:.95rem}
-
-/* ---------- BUTTONS ---------- */
-.btnrow{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.btn{
-  background:linear-gradient(180deg,var(--teal),var(--teal-2));
-  color:#001316;border:1px solid rgba(255,255,255,.18);
-  padding:12px 18px;border-radius:10px;font-weight:700;
-  box-shadow:0 6px 18px rgba(14,165,166,.35); transition:transform .06s ease, filter .2s ease;
-}
-.btn:hover{transform:translateY(-1px);filter:brightness(1.08)}
-.btnghost{
-  background:transparent;color:var(--yellow);
-  border:1px solid rgba(250,204,21,.55);padding:12px 18px;border-radius:10px;font-weight:700;
-}
-
-/* ---------- GRID HELPERS ---------- */
-.grid{display:grid;gap:18px}
-.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
-.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
-
-/* ---------- FORM ---------- */
-form.grid{max-width:720px;margin:0 auto}
-label{display:block;margin-bottom:6px;color:var(--ink-dim);font-size:.9rem}
-input,textarea,select{
-  width:100%;background:#0b1323;color:var(--ink);
-  border:1px solid var(--border);border-radius:10px;
-  padding:12px 14px;outline:none;
-}
-textarea{min-height:140px;resize:vertical}
-
-/* ---------- FOOTER ---------- */
-.footer{padding:36px 20px;border-top:1px solid rgba(255,255,255,.06);text-align:center;color:var(--ink-dim)}
-.footer a{color:var(--ink)}
-
-/* ---------- RESPONSIVE ---------- */
-@media (max-width:900px){
-  .cards{grid-template-columns:1fr}
-  .grid.two,.grid.three{grid-template-columns:1fr}
+    <html lang="en">
+      <body>
+        <Header />
+        {children}
+      </body>
+    </html>
+  );
 }
 
 
+Page 
 
-      
+export default function Page() {
+  return (
+    <main style={{ background: 'var(--charcoal)', color: 'var(--ink)' }}>
+      {/* HERO */}
+      <section id="discover" style={{ maxWidth: 1100, margin: '0 auto', padding: '96px 24px 48px' }}>
+        <h1 style={{ fontSize: 'clamp(36px,6vw,64px)', lineHeight: 1.05, margin: 0, letterSpacing: '-0.02em', fontWeight: 800 }}>
+          Your culture has a formula. We make it measurable.
+        </h1>
+
+        <p style={{ fontSize: 'clamp(18px,2.2vw,22px)', color: '#D1D5DB', margin: '12px 0 0', maxWidth: 900 }}>
+          Every organisation has a Leadership Equation — what’s yours?
+        </p>
+
+        <p style={{ fontSize: 'clamp(15px,2vw,18px)', color: '#9CA3AF', margin: '10px 0 24px', maxWidth: 900 }}>
+          Behavioural intelligence for leadership and culture. Diagnose, measure,
+          and transform your organisation with the LEQ ecosystem.
+        </p>
+
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12 }}>
+          <a href="/profile" aria-label="Get your free leadership profile" className="btnGold">
+            Get your free leadership profile
+          </a>
+          <a href="#contact" aria-label="Talk to an expert" className="btnTeal">
+            Talk to an expert
+          </a>
+        </div>
+      </section>
+
+      {/* WHY LEQ */}
+      <section id="why" className="container" style={{ paddingTop: 0 }}>
+        <div className="stepGrid">
+          <div className="step">
+            <div className="badge">1</div>
+            <h3>Clarity first</h3>
+            <p>See where behaviour helps or harms performance.</p>
+          </div>
+          <div className="step">
+            <div className="badge">2</div>
+            <h3>Signal to action</h3>
+            <p>Turn data into 3–4 behaviours that move results.</p>
+          </div>
+          <div className="step">
+            <div className="badge">3</div>
+            <h3>Prove the gain</h3>
+            <p>Track delivery, safety, and load over time.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* WHAT WE DO / OUTCOMES */}
+      <section id="what" className="container" style={{ paddingTop: 32, paddingBottom: 72 }}>
+        <div className="grid2">
+          <div className="card">
+            <h2 className="h2">What we do</h2>
+            <ul className="ul">
+              <li>Surface where behaviour helps or harms performance.</li>
+              <li>Map values to everyday decisions and ways of working.</li>
+              <li>Make safety, trust, and inclusion visible and measurable.</li>
+              <li>Focus teams on the few behaviours that change outcomes.</li>
+              <li>Track progress and verify impact with real evidence.</li>
+            </ul>
+          </div>
+
+          <div className="card">
+            <h2 className="h2">Outcomes you can expect</h2>
+            <ul className="ul">
+              <li>Faster decisions and clearer priorities.</li>
+              <li>Lower burnout risk and better load balance.</li>
+              <li>Higher psychological safety and trust.</li>
+              <li>Better role fit and stronger retention.</li>
+              <li>Leaders who leave a visible legacy of impact.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* HOW IT WORKS (metrics + stories + CTA) */}
+      <section id="how" className="container" style={{ paddingTop: 48, paddingBottom: 72 }}>
+        <div className="metricsGrid">
+          <div className="metric"><h3>3×</h3><p>Faster insight to action</p></div>
+          <div className="metric"><h3>40+</h3><p>Behaviour signals tracked</p></div>
+          <div className="metric"><h3>12k+</h3><p>Data points analysed</p></div>
+        </div>
+
+        <div className="impactGrid">
+          <div className="impactCard">
+            <p className="quote">“We cut noise, set three behaviours, and delivery moved.”</p>
+            <span className="role">Executive Lead</span>
+          </div>
+          <div className="impactCard">
+            <p className="quote">“Safety improved and staff spoke up earlier about risks.”</p>
+            <span className="role">Operations Lead</span>
+          </div>
+          <div className="impactCard">
+            <p className="quote">“Clear role fit decisions saved us weeks in recruitment.”</p>
+            <span className="role">People Lead</span>
+          </div>
+        </div>
+
+        <div className="ctaBanner">
+          <h2>See your starting point</h2>
+          <p>A short check that shows top drivers and risks.</p>
+          <a href="/snapshot" className="ctaButton">Start your snapshot</a>
+        </div>
+      </section>
+
+      {/* INSIGHTS (placeholder for now) */}
+      <section id="insights" className="container" style={{ paddingTop: 24, paddingBottom: 64 }}>
+        <div className="card">
+          <h2 className="h2">Insights</h2>
+          <ul className="ul">
+            <li>Why safety × engagement − burnout predicts culture health.</li>
+            <li>Leaderprint™: measuring style fit without the fluff.</li>
+            <li>MissionMatrix™: how teams move from noise to delivery.</li>
+          </ul>
+        </div>
+      </section>
+
+      {/* CONTACT */}
+      <section id="contact" className="container" style={{ paddingTop: 0, paddingBottom: 96 }}>
+        <div className="card">
+          <h2 className="h2">Contact</h2>
+          <ul className="ul">
+            <li>Email: hello@consultleq.com</li>
+            <li>Book a call: /contact</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+  );
+}
+
